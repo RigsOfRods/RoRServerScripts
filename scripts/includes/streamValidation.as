@@ -100,7 +100,7 @@ class streamValidation
 			{
 				server.say(msg, informants[i], FROM_SERVER);
 			}
-			
+			server.kick(uid, "banned vehicle");
 			return BROADCAST_BLOCK;
 		}
 		else
