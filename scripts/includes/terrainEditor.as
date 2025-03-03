@@ -1092,7 +1092,7 @@ class terrainEditor
 			cmd.privateGameCommand.addCmd("terrainEditorMyUid = "+cmd.uid+";");
 
 			// Spawn all custom objects
-			for(uint i=0; i<clients.length; ++i)
+			for(uint i=0; i<clients.length(); ++i)
 			{
 				if(i!=uint(pos))
 				{
@@ -1171,7 +1171,7 @@ class terrainEditor
 
 		gameScript script(uid, "terrainEditorMyUid = "+uid+";");
 		// Spawn all custom objects
-		for(uint i=0; i<clients.length-1; ++i)
+		for(uint i=0; i<clients.length()-1; ++i)
 		{
 			for(uint k=0; k<clients[i].cmd_add.length(); ++k)
 			{

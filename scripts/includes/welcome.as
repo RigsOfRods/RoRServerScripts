@@ -7,7 +7,7 @@ class UserStatistics
 
 	UserStatistics()
 	{
-		@s = @localStorage("userJoinStatistics."+server.listenPort+".asdata");
+		@s = @localStorage("userJoinStatistics."+server.get_listenPort()+".asdata");
 	}
 }
  

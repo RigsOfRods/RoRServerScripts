@@ -7,7 +7,7 @@ void gameCmd(int uid, string message)
 		if(message.substr(0,6)=="BOTAPI")
 		{
 			array<string>@ parts = message.substr(7).split('$');
-			if(parts.length<2)
+			if(parts.length()<2)
 				return;
 
 			if(parts[0] == "IP")
@@ -17,7 +17,7 @@ void gameCmd(int uid, string message)
 			else if(parts[0] == "SAY_COMMENT")
 			{
 				// Add parts together again
-				for(uint i=2; i<parts.length; ++i)
+				for(uint i=2; i<parts.length(); ++i)
 					parts[1] += "$" + parts[i];
 					
 				string msg = stringReplace(parts[1], '"', '\\"');
@@ -29,7 +29,7 @@ void gameCmd(int uid, string message)
 			else if(parts[0] == "MSG_UID")
 			{
 				// Add parts together again
-				for(uint i=3; i<parts.length; ++i)
+				for(uint i=3; i<parts.length(); ++i)
 					parts[2] += "$" + parts[i];
 					
 				gameScript script(TO_ALL);
