@@ -470,7 +470,7 @@ class gameScriptManager
 		@cb.argument = @argument;
 
 		int assigned = -1;
-		for(uint i=0; i<gameCmdCallbackList.length; ++i)
+		for(uint i=0; i<gameCmdCallbackList.length(); ++i)
 		{
 			if(gameCmdCallbackList[i] is null)
 			{
@@ -495,7 +495,7 @@ class gameScriptManager
 
 	void removeGameCmdCallback(GAMESCRIPTMANAGER_CALLBACK@ callback)
 	{
-		for(uint i=0; i<gameCmdCallbackList.length; ++i)
+		for(uint i=0; i<gameCmdCallbackList.length(); ++i)
 		{
 			if(gameCmdCallbackList[i] !is null && gameCmdCallbackList[i].callback is callback)
 			{
@@ -509,7 +509,7 @@ class gameScriptManager
 #if DEBUG
 		server.Log("GAMECMD| "+msg);
 #endif
-		if(msg.length>6 && msg[0]==gameCmdHeader_0 && msg[1]==gameCmdHeader_1 && msg[2]==gameCmdHeader_2 && msg[5]==gameCmdHeader_5)
+		if(msg.length()>6 && msg[0]==gameCmdHeader_0 && msg[1]==gameCmdHeader_1 && msg[2]==gameCmdHeader_2 && msg[5]==gameCmdHeader_5)
 		{
 			int callbackNum = parseInt(msg.substr(3,2));
 			
@@ -842,7 +842,7 @@ class terrainFileLoader
 					tmp = trim(tmp);
 
 					// Parse the line
-					if(tmp.length==0)
+					if(tmp.length()==0)
 					{
 						continue;
 					}

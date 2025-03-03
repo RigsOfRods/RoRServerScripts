@@ -74,7 +74,7 @@ class streamValidation
 
 		// Loop over the list and compare the vehicle name
 		bool found = false;
-		for(uint i=0; i<filterList.length; ++i)
+		for(uint i=0; i<filterList.length(); ++i)
 		{
 			if(name == filterList[i])
 			{
@@ -96,7 +96,7 @@ class streamValidation
 			
 			// Let the informants know
 			string msg = "User **'"+server.getUserName(uid)+"'** with uid **("+uid+")** has spawned a **'"+name+"'**, which is a banned vehicle.";
-			for(uint i=0; i<informants.length; ++i)
+			for(uint i=0; i<informants.length(); ++i)
 			{
 				server.say(msg, informants[i], FROM_SERVER);
 			}

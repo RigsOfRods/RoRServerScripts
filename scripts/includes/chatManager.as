@@ -2027,7 +2027,7 @@ class chatPlugin_ping
 			
 			// Send a the ping request to all clients
 			// We can't use TO_ALL here, due to 0.38 compatibility
-			for(uint i=0; i<clients.length; ++i)
+			for(uint i=0; i<clients.length(); ++i)
 			{
 				cmd.sendTo(clients[i].uid);
 			}
