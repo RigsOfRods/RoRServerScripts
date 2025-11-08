@@ -5,6 +5,7 @@
 #include "streamValidation.as"
 #include "botAPI.as"
 #include "kickNotificationWrapper.as"
+#include "ipChecker.as"
 
 // Create a chatManager object instance
 chatManager chatSystem();
@@ -114,6 +115,11 @@ array<string>  streamFilterList =
 	"foo.truck","bar.truck"
 }; 
 //streamValidation bannedCars(@streamFilterList, BLACKLIST);
+
+// Remove the // in front of the next line to enable the IP checker system.
+// Make sure to set your email address in ipChecker.as, otherwise this won't work
+// we don't have a config file for scripts yet, sooo... yeah
+// ipChecker ip("mysupersecret@notvalid.com");
 
 
 // Our main function (never remove this, even when it does nothing useful!)
